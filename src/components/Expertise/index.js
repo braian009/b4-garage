@@ -10,24 +10,20 @@ const Expertise = () => {
         <div className="expertise-item">
           <div className="expertise-item__overlay"></div>
           <div className="expertise-item__text">
-            <h3>Racing kits</h3>
+            <h3>Speed Essentials</h3>
             <h5>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-              Temporibus, deleniti!
+            Unlock our vehicle's full racing potential with our special components and services.
             </h5>
-            <div className="cta-button">More</div>
           </div>
         </div>
         <div className="expertise-item">
           <div className="expertise-item__overlay"></div>
 
           <div className="expertise-item__text">
-            <h3>Every day</h3>
+            <h3>Daily Driver Solutions</h3>
             <h5>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-              Temporibus, deleniti!
+            Elevate your daily drive with essential services and enhancements.
             </h5>
-            <div className="cta-button">More</div>
           </div>
         </div>
       </div>
@@ -39,8 +35,9 @@ const ExpertiseContainer = styled.section`
   height: 100vh;
   width: 100%;
   background-color: var(--black-primary);
-  border-bottom: 1px solid white;
-  border-top: 1px solid white;
+  position: relative;
+
+
 
   .expertise-inner {
     width: 100%;
@@ -49,6 +46,21 @@ const ExpertiseContainer = styled.section`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative;
+
+    &::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 20;
+    }
+
+
 
     .expertise-item {
       position: relative;
@@ -66,7 +78,7 @@ const ExpertiseContainer = styled.section`
         right: 0;
         bottom: 0;
 
-        background-color: hsla(0, 0%, 0%, 0.5);
+        background-color: var(--blackk);
       }
 
       &:nth-child(1) {
@@ -108,12 +120,20 @@ const ExpertiseContainer = styled.section`
         .cta-button {
           font-size: 0.9rem;
           width: 5em;
-          background-color: var(--black-primary);
+          background-color: var(--orange-primary);
+
           padding: 0.4em 0.7em;
           border-radius: 20px;
           outline: none;
+          transition: all 0.3s ease-out;
 
           text-align: center;
+          cursor: pointer;
+
+          &:hover {
+            background-color: var(--orange-secondary);
+          
+          }
         }
       }
     }

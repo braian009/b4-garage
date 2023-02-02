@@ -25,7 +25,6 @@ const Slider = ({ onChangeSlide, index, images }) => {
 const SliderContainer = styled.div`
   width: 100%;
   height: 100%;
-  padding: 1em;
 
   .slider-inner {
     position: relative;

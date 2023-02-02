@@ -42,7 +42,7 @@ const NavbarContainer = styled.nav`
     width: 100%;
     margin: 0 auto;
     max-width: 1080px;
-    height: 6em;
+    height: 5em;
     display: flex;
     justify-content: center;
     align-items: center;

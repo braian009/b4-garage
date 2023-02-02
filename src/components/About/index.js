@@ -10,21 +10,19 @@ const About = () => {
 
   const aboutCards = [
     {
-      title: "some title",
+      title: "From Passion to Profession",
       description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, deserunt. Quam inventore in, aperiam dolor earum quod provident id aliquam nihil, ipsam impedit illum neque?",
+        "Our garage was founded with the mission of offering top-notch car modification and repair services. The founder, a true car enthusiast, wanted to create a space where drivers could bring their vehicles to receive the best care possible. With a passion for the industry and a commitment to excellence, our garage has become a trusted name in the community.",
       image: require("../../assets/images/aboutimage1.jpg"),
     },
     {
-      title: "some title",
-      description:
-        "LLorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, deserunt. Quam inventore in, aperiam dolor earum quod provident id aliquam nihil, ipsam impedit illum neque?",
+      title: "Leading the Way",
+      description: "Today, our garage is widely recognized as one of the best in the area. We have gained popularity due to our attention to detail, use of high-quality parts, and exceptional customer service. We are proud sponsors of local racing events and car shows, further establishing our reputation as a leader in the industry.",
       image: require("../../assets/images/aboutimage2.jpg"),
     },
     {
-      title: "some title",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, deserunt. Quam inventore in, aperiam dolor earum quod provident id aliquam nihil, ipsam impedit illum neque?",
+      title: "Driving Forward",
+      description: "Looking to the future, our company has set its sights on continued growth and expansion. We are dedicated to staying at the forefront of the industry, offering the latest and greatest. Whether it's through expanding our facility, offering new services, or partnering with leading brands, we are committed to delivering the best experience for our customers.",
       image: require("../../assets/images/aboutimage3.jpg"),
     },
   ];
@@ -54,11 +52,14 @@ const About = () => {
         <div className="arrow-right" onClick={toTheNext}>
           <ArrowRight />
         </div>
-        <Slider
-          onChangeSlide={handleSlideChange}
-          index={currentIndex}
-          images={[...aboutCards.map((item) => item.image)]}
-        />
+        <div className="about-slider">
+          <Slider
+            onChangeSlide={handleSlideChange}
+            index={currentIndex}
+            images={[...aboutCards.map((item) => item.image)]}
+          />
+        </div>
+
         <div className="about-text">
           <h2>{aboutCards[currentIndex].title}</h2>
           <p>{aboutCards[currentIndex].description}</p>
@@ -76,11 +77,11 @@ const About = () => {
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="icon icon-tabler icon-tabler-point"
-                  width="48"
-                  height="48"
+                  width="35"
+                  height="35"
                   viewBox="0 0 24 24"
-                  strokeWidth="1.5"
-                  stroke="#2c3e50"
+                  strokeWidth="1"
+                  stroke="#d8d8d8"
                   fill="none"
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -110,22 +111,23 @@ const AboutContainer = styled.section`
     grid-template-columns: 1fr;
     place-items: center;
 
-    grid-template-rows: 2fr 1fr 1.5em;
+    grid-template-rows: 60% 1fr 40px;
+    padding: 1.5em 1em;
 
     position: relative;
-    padding: 1em;
 
     .arrow-left {
-      font-size: 3.5rem;
+      width: 40px;
+      height: 40px;
+
       position: absolute;
-      top: 95%;
-      left: 0.1em;
+      bottom: 0.25em;
+
+      left: 2.5em;
       transform: translate(0, -50%);
-      font-weight: bold;
       z-index: 1;
       cursor: pointer;
-      width: 1em;
-      height: 2em;
+      overflow: hidden;
 
       svg {
         width: 100%;
@@ -133,54 +135,97 @@ const AboutContainer = styled.section`
         stroke: var(--white-primary);
       }
 
-      @media (min-width: 40em) {
-        left: 5em;
+      /* @media (min-width: 40em) {
+        left: 4em;
+      } */
+
+      @media (min-width: 1180px) {
+        left: -1em;
+        top: 50%;
       }
     }
 
     .arrow-right {
-      font-size: 3.5rem;
+      width: 40px;
+      height: 40px;
       position: absolute;
-      top: 95%;
-      right: 0.1em;
+      bottom: 0.25em;
+      right: 2.5em;
       transform: translate(0, -50%);
-      font-weight: bold;
       z-index: 1;
       cursor: pointer;
-      width: 1em;
-      height: 1em;
+      overflow: hidden;
 
       svg {
         width: 100%;
         height: 100%;
         stroke: var(--white-primary);
       }
-
+      /* 
       @media (min-width: 40em) {
-        right: 5em;
+        right: 4em;
+      } */
+
+      @media (min-width: 1180px) {
+        right: -1em;
+        top: 50%;
       }
     }
 
     .about-points {
       display: flex;
-      justify-content: flex-start;
+      justify-content: center;
+      align-items: center;
+
+      div {
+        width: 40px;
+        height: 40px;
+
+        &.active {
+          svg {
+            stroke: #27ae60;
+          }
+          }
+
+        svg {
+          width: 100%;
+          height: 100%;
+
+          &:hover {
+            stroke: #27ae60;
+
+          }
+
+          
+
+
+
+        }
+      }
     }
 
-    #slider {
+    .about-slider {
       grid-column: span 1;
       grid-row: span 1;
-      height: 90%;
-      max-width: 580px;
+      width: 100%;
+      height: 100%;
+      max-width: 620px;
+
+      padding: 1em;
     }
 
     .about-text {
+      font-size: 0.95rem;
       align-self: start;
       grid-column: span 1;
       grid-row: span 1;
       padding: 0 1em;
+      margin-top: 1em;
+
 
       p {
         margin-top: 1em;
+        overflow: auto;
       }
     }
 
@@ -191,6 +236,7 @@ const AboutContainer = styled.section`
 
     @media (min-width: 40em) {
       grid-template-columns: 1fr 1fr;
+      max-width: 1080px;
 
       .about-points {
         grid-column: span 2;
@@ -201,12 +247,14 @@ const AboutContainer = styled.section`
         grid-column: 2 / 3;
         grid-row: span 2;
         align-self: center;
+        padding-left: 1em;
+        margin-top: 0;
       }
 
-      #slider {
+      .about-slider {
         grid-column: 1 / 2;
         grid-row: span 2;
-        height: 85%;
+        height: 75%;
       }
     }
   }
