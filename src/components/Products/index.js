@@ -103,9 +103,12 @@ const ProductsContainer = styled.section`
         display: flex;
         flex-direction: column;
         z-index: 10;
+        width: 7em;
 
         h3 {
           font-size: 1.4rem;
+          width: 100%;
+          text-align: center;
         }
 
         * + * {
@@ -114,11 +117,11 @@ const ProductsContainer = styled.section`
       }
 
       .cta-button {
-        font-size: 0.9rem;
-        width: 5em;
+        font-size: 0.8rem;
         background-color: var(--orange-primary);
-        padding: 0.4em 0.7em;
+        padding: 0.4em 0.8em;
         border-radius: 20px;
+        margin: 0 auto;
         outline: none;
         cursor: pointer;
         text-align: center;
@@ -137,11 +140,10 @@ const ProductsContainer = styled.section`
       .products-item {
 
         .products-item__text {
-          /* position: relative; */
 
           h3 {
             position: absolute;
-            top: 50%;
+            top: 0;
             /* transform: translateY(); */
             transition: all 0.3s ease-out;
           }
@@ -152,12 +154,13 @@ const ProductsContainer = styled.section`
             transition: transform 0.3s ease-out;
             transition: visibility 1s linear 3s;
             transition: opacity .3s ease-out 0s;
+            margin-top: 0;
           }
         }
 
         &:hover .products-item__text {
           h3 {
-            top: 0;
+            top: -0.5em;
           }
 
           .cta-button {

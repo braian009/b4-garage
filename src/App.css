@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans&display=swap');
+
 :root {
   font-size: calc(0.7em + 1vw);
   box-sizing: border-box;
@@ -38,7 +40,7 @@
 
 body {
   margin: 0;
-  font-family: "Noto Serif", serif;
+  font-family: "Alegreya Sans", sans-serif;
   color: var(--white-primary);
   background-color: var(--black-primary);
   line-height: 1.4;

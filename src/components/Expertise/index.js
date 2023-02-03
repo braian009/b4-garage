@@ -3,29 +3,55 @@ import styled from "styled-components";
 import expertise1 from "../../assets/images/expertise1.jpg";
 import expertise2 from "../../assets/images/expertise5.jpg";
 
+const expertiseList = [
+  {
+    title: "Speed Essentials",
+    description:
+      "Unlock our vehicle's full racing potential with our special components and services.",
+    services: [
+      "Exhaust Systems",
+      "High-Performance Brake Kits",
+      "Air Intake Systems",
+      "Chassis Reinforcement",
+      "Aerodynamic Upgrades",
+    ],
+  },
+  {
+    title: "Daily Driver Solutions",
+    description:
+      "Elevate your daily drive with essential services and enhancements.",
+    services: [
+      "Tire Services",
+      "Engine Tune-Ups",
+      "Electrical Repairs",
+      "Brake Maintenance",
+      "Steering & Alignment Services",
+
+    ],
+  },
+];
+
 const Expertise = () => {
   return (
     <ExpertiseContainer>
       <div className="expertise-inner">
-        <div className="expertise-item">
-          <div className="expertise-item__overlay"></div>
-          <div className="expertise-item__text">
-            <h3>Speed Essentials</h3>
-            <h5>
-            Unlock our vehicle's full racing potential with our special components and services.
-            </h5>
-          </div>
-        </div>
-        <div className="expertise-item">
-          <div className="expertise-item__overlay"></div>
-
-          <div className="expertise-item__text">
-            <h3>Daily Driver Solutions</h3>
-            <h5>
-            Elevate your daily drive with essential services and enhancements.
-            </h5>
-          </div>
-        </div>
+        {expertiseList.map((expertise, i) => {
+          return (
+            <div className="expertise-item" key={`expertise-${i}`}>
+              <div className="expertise-item__overlay"></div>
+              <div className="expertise-item__text">
+                <h3>{expertise.title}</h3>
+              </div>
+              <div className="expertise-item__list">
+                <ul>
+                  {expertise.services.map((service, i) => {
+                    return <li key={`service-${i}`}>{service}</li>;
+                  })}
+                </ul>
+              </div>
+            </div>
+          );
+        })}
       </div>
     </ExpertiseContainer>
   );
@@ -37,8 +63,6 @@ const ExpertiseContainer = styled.section`
   background-color: var(--black-primary);
   position: relative;
 
-
-
   .expertise-inner {
     width: 100%;
     height: 100%;
@@ -48,19 +72,7 @@ const ExpertiseContainer = styled.section`
     align-items: center;
     position: relative;
 
-    &::before {
-    content: "";
-    display: block;
-    width: 100%;
-    height: 1px;
-    background-color: white;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 20;
-    }
-
-
+   
 
     .expertise-item {
       position: relative;
@@ -68,7 +80,7 @@ const ExpertiseContainer = styled.section`
       width: 100%;
       display: grid;
       grid-template-columns: 1fr;
-      grid-template-rows: auto;
+      grid-template-rows: 35% 65%;
       place-items: center;
 
       .expertise-item__overlay {
@@ -108,14 +120,13 @@ const ExpertiseContainer = styled.section`
         z-index: 10;
         padding: 1em;
         /* border-radius: 0.7em; */
-        * + * {
-          margin-top: 1em;
+        align-self: end;
+        
+        h3 {
+          font-style: italic;
         }
 
-        h5 {
-          text-align: center;
-          line-height: 1.2;
-        }
+        
 
         .cta-button {
           font-size: 0.9rem;
@@ -132,7 +143,23 @@ const ExpertiseContainer = styled.section`
 
           &:hover {
             background-color: var(--orange-secondary);
-          
+          }
+        }
+      }
+
+      .expertise-item__list {
+        position: relative;
+        z-index: 10;
+        align-self: start;
+        ul {
+          list-style-type: none;
+          padding: 0;
+          margin: 0;
+
+          li {
+            text-align: left;
+            font-size: 0.9rem;
+            color: var(--white-secondary);
           }
         }
       }
