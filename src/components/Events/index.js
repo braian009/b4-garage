@@ -111,8 +111,9 @@ const EventsContainer = styled.section`
         hsla(0, 0%, 0%, 0.9),
         hsla(0, 0%, 0%, 0.8),
         hsla(0, 0%, 0%, 0.7),
-        hsla(0, 0%, 0%, 0.6),
-        hsla(0, 0%, 0%, 0.3),
+        hsla(0, 0%, 0%, 0.55),
+        hsla(0, 0%, 0%, 0.4),
+        hsla(0, 0%, 0%, 0.2),
         hsla(0, 0%, 0%, 0)
       );
       position: absolute;

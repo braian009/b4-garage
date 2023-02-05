@@ -103,6 +103,9 @@ const AboutContainer = styled.section`
   width: 100%;
   background-color: #13131a;
 
+  border-bottom: 1px solid var(--orange-primary);
+
+
   .about-inner {
     width: 100%;
     height: 100%;

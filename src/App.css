@@ -9,13 +9,14 @@
   --black-primary: #202020;
   --black-secondary: #2c2c2c;
   --white-primary: #f8f8f8;
-  --gray-primary: #d3d3d3;
+  --gray-primary: rgb(211, 211, 211);
   --orange-primary: #e97200;
   --orange-secondary: #ec5e00;
   --blackk: hsla(240, 16%, 9%, 0.7);
 
   --blue-primary: #1c3d5a;
   --blue-secondary: #3b5c7d;
+  --dark-blue: rgb(19, 19, 26);
 
   --white-secondary: #d8d8d8;
 }

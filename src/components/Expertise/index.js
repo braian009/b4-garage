@@ -63,6 +63,9 @@ const ExpertiseContainer = styled.section`
   background-color: var(--black-primary);
   position: relative;
 
+  border-bottom: 1px solid var(--orange-primary);
+
+
   .expertise-inner {
     width: 100%;
     height: 100%;
