@@ -4,32 +4,32 @@
   font-size: calc(0.7em + 1vw);
   box-sizing: border-box;
 
-  --dark-vanila: #d4caa3;
-  --dark-white: #f5f5dc;
-  --black-primary: #202020;
-  --black-secondary: #2c2c2c;
-  --white-primary: #f8f8f8;
-  --gray-primary: rgb(211, 211, 211);
-  --orange-primary: #e97200;
-  --orange-secondary: #ec5e00;
-  --blackk: hsla(240, 16%, 9%, 0.7);
+  --black-primary: rgb(32, 32, 32);
+  --black-secondary: rgb(44, 44, 44);
 
-  --blue-primary: #1c3d5a;
-  --blue-secondary: #3b5c7d;
+  --white-primary: rgb(248, 248, 248);
+  --white-secondary: rgb(211, 211, 211);
+  --dark-white: rgb(191, 191, 191);
+
+  --gray-primary: rgb(61, 61, 61);
+
+  --orange-primary: rgb(232, 112, 0);
+  --orange-secondary: rgb(236, 94, 0);
+  --palid-orange: hsl(29, 90%, 55%);
+
   --dark-blue: rgb(19, 19, 26);
 
-  --white-secondary: #d8d8d8;
 }
 
 @media (min-width: 30em) {
   :root {
-    font-size: calc(0.6em + 1vw);
+    font-size: calc(0.65em + 1vw);
   }
 }
 
 @media (min-width: 1080px) {
   :root {
-    font-size: 1.2rem;
+    font-size: 1.25rem;
   }
 }
 
@@ -45,6 +45,8 @@ body {
   color: var(--white-primary);
   background-color: var(--black-primary);
   line-height: 1.4;
+  overflow-x: hidden;
+
 }
 
 a {
